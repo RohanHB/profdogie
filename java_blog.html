@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />   
+    <link rel="stylesheet" href="./testc.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        
+
+    </style>
+    <!-- PWA shiz -->
+<link href='https://raw.githubusercontent.com/techdogie/Profdogie/main/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'/>
+<link href='https://raw.githubusercontent.com/techdogie/Profdogie/main/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'/>
+<link href='https://raw.githubusercontent.com/techdogie/Profdogie/main/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'/>
+<link href='https://raw.githubusercontent.com/techdogie/Profdogie/main/site.webmanifest' rel='manifest'/>
+    
+</head>
+<body>
+    <!-- navigation -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+<div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+  <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div class="p-4 flex flex-row items-center justify-between">
+          <img src="./admin/uploads/buskyT.png" alt="" class="realtive overflow-hidden rounded-full  w-12 h-12 ">
+            <a href="./index.html" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Profdogie</a>
+            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline hover:bg-purple-500" href="./index.html">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline hover:bg-purple-500" href="./Aboutus.html">About</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline hover:bg-purple-500" href="./Contact.html">Contact us</a>
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                  <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                    <span>More</span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </button>
+                  <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right    rounded-md shadow-lg md:w-48">
+                    <div class="px-2 py-2 bg-white  rounded-md shadow dark-mode:bg-gray-800">
+                      <a class="block  px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline hover:bg-purple-500" href="./Aboutus.html">About</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline hover:bg-purple-500" href="./python_blog.html">Python</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline hover:bg-purple-500" href="./ruby_blog.html">Ruby</a>
+                    </div>
+                  </div>
+                </div>       
+        </nav>
+  </div>
+</div>
+
+<!-- Body -->
+
+
+
+  <!-- Component Code -->
+<div class="block max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 ">
+  
+    <img src="./img/Java_img.png" alt="" class="flex-row object-cover h-53 w-full rounded-t-xl">
+ 
+<div class="max-w-2xl mx-auto">
+  <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
+      <div class="">
+            <a href="#" class="text-xs text-indigo-600 uppercase font-medium hover:text-gray-900 transition duration-500 ease-in-out">
+              java
+            </a>, <a href="#" class="text-xs text-indigo-600 uppercase font-medium hover:text-gray-900 transition duration-500 ease-in-out">
+              Core_java
+            </a>
+            <h1 href="#" class="text-gray-900 font-bold text-3xl mb-2">JAVA</h1>
+            <h3 class="text-2xl text-gray-900 font-bold my-5">#1. What is JAVA?</h3>
+            <p class="text-gray-700 text-xs mt-2"><a href="#" class="text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out"></a></p>
+            <p class="text-base text-gray-900 leading-8 my-5">
+                Java is a popular programming language, created in 1995.
+                <br />
+                It is owned by Oracle, and more than 3 billion devices run Java.
+
+                <h3 class="text-2xl text-gray-900 font-bold my-5">It is used for:</h3>
+            <ul style="list-style-type: circle;">
+                <li>Mobile applications (specially Android apps)</li>
+                <li>Desktop applications</li>
+                <li>Web applications</li>
+                <li>Web servers and application servers</li>
+                <li>Games</li>
+                <li>Database connection</li>
+                <li>And much, much more!</li>
+            </ul>
+            </p>
+        
+        <h3 class="text-2xl text-gray-900 font-bold my-5">#2. Why Use Java?</h3>
+        
+        <p class="text-base text-gray-900 leading-8 my-5">
+        <ul style="list-style-type: circle;">
+            <li>Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)</li>
+            <li>It is one of the most popular programming language in the world</li>
+            <li>It is easy to learn and simple to use</li>
+            <li>It is open-source and free</li>
+            <li>It is secure, fast and powerful</li>
+            <li>It has a huge community support (tens of millions of developers)</li>
+            <li>Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs</li>
+            <li>As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa</li>
+        </ul>
+        </p>
+        
+        <blockquote class="border-l-4 text-base text-gray-900 italic leading-8 my-5 p-5 text-indigo-600">
+        <div class="back">
+            <div class="code">
+                <h3 class="text-2xl text-gray-900 font-bold my-5">#3. Example</h3>
+                <code>
+                    &emsp;&emsp;&emsp; class HelloWorld { <br />
+                    &emsp;&emsp;&emsp;&emsp;&emsp; public static void main(String[] args) { <br />
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; System.out.println("Hello World"); <br />
+                    &emsp;&emsp;&emsp;&emsp;&emsp;    } <br />
+                    &emsp;&emsp;&emsp; }
+                </code>
+            </div>
+        </div>
+    </blockquote>
+        
+    <p class="text-base text-gray-900 leading-8 my-5">
+        Where <br />
+        <b>class HelloWorld { ... } :</b> In Java, every application begins with a class definition. In the program, HelloWorld is the name of the class, and the class definition is:.<br />
+                                        just remember that every Java application has a class definition, and the name of the class should match the filename in Java.<br />
+        <b>public static void main(String[] args) { ... } :</b> This is the main method. Every application in Java must contain the main method. The Java compiler starts executing the code from the main method. <br />
+        <b>System.out.println("Hello, World!"); :</b> The code above is a print statement. It prints the text Hello, World! to standard output (your screen). The text inside the quotation marks is called String in Java.
+    </p>
+
+        <a href="#" class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out">
+              #Core Java
+            </a>, <a href="#" class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out">
+              #java
+            </a>, <a href="#" class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out">
+              #android Language
+            </a>, <a href="#" class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out">
+              #java Programming
+            </a>,<a href="#" class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out">
+              #oracle
+            </a>
+        
+            </div>
+        
+          </div>
+     </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- main ends here -->
+
+
+
+<!-- footer -->
+
+<div class="flex flex-wrap justify-center bg-purple-700 p-6">
+  <div class="flex flex-wrap mb-4 w-full">
+    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 ">
+      <h3 class="text-3xl py-4">About Us</h3>
+      <p>Profdogie is a materialistic Design based website designed to provide best e-source for learning.
+      </p>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 pl-8">
+      <h3 class="text-3xl py-4">More</h3>
+      <ul>
+        <li><a href="C++_blog.html">C++</a></li>
+        <li><a href="java_blog.html">Java</a></li>
+        <li><a href="php_blog.html">PHP</a></li>
+        <li><a href="python_blog.html">Python</a></li>
+        <li><a href="ruby_blog.html">Ruby</a></li>
+      </ul>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 ">
+      <h3 class="text-3xl py-4">Social</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i>&nbsp;Facebook</a></li>
+        <li><a href="https://api.whatsapp.com/send?text=http://tshz.c1.biz"><i class="fab fa-whatsapp"></i>&nbsp;Whatsapp</a></li>
+        <li><a href="https://www.Instagram.com/"><i class="fab fa-instagram"></i>&nbsp;Instagram</a></li>
+        <li><a href="https://www.Twitter.com/"><i class="fab fa-twitter"></i>&nbsp;Twitter</a></li>
+        <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i>&nbsp;Youtube</a></li>
+      </ul>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4">
+      <h3 class="text-3xl py-4">Subscribe</h3>
+      <form action="#">
+        <div class="mb-4">
+          <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" placeholder="Email">
+        </div>
+        <button  class="bg-purple-800 hover:bg-indigo-700  text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="bg-purple-900 p-2 pl-6">
+  <p class="bottom">© Copyright 2021 - <a href="./loggedin.php">Profdogie.com</p>
+</div>
+    </body>
+</body>
+</html>
